@@ -462,6 +462,11 @@ function shuffleChar(str, iterations) {
   let STR = [...str];
   const LENGTH = STR.length;
 
+  let strToString = '';
+  for (let i = 0; i < LENGTH; i += 1) {
+    strToString += STR[i];
+  }
+
   let period = 0;
   let currentStr = STR;
 
@@ -479,7 +484,7 @@ function shuffleChar(str, iterations) {
 
     currentStr = evenChars + oddChars;
     period += 1;
-  } while (currentStr !== STR);
+  } while (currentStr !== strToString);
 
   const ITERATION = iterations % period;
 
